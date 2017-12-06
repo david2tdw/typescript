@@ -1,0 +1,22 @@
+let passcode ='secret passcode'
+
+class Employee {
+  private _fullName: string
+  get fullName() {
+    return this._fullName
+  }
+  set fullName(newName: string) {
+    if (passcode && passcode == 'secret passcode') {
+      this._fullName = newName
+    } else {
+      console.log('Error: Unauthorized update of employee!')
+    }
+  }
+
+}
+
+let employee = new Employee()
+employee.fullName = 'bob smith'
+if (employee.fullName) {
+  console.log(employee.fullName)
+}
